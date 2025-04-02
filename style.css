@@ -1,0 +1,358 @@
+.nunito-light {
+    font-weight: 300;
+}
+
+.nunito-bold {
+    font-weight: 700;
+}
+
+.nunito-italic {
+    font-style: italic;
+}
+
+.roboto-flex {
+    font-family: "Roboto Flex", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0,
+      "wdth" 100,
+      "GRAD" 0,
+      "XOPQ" 96,
+      "XTRA" 468,
+      "YOPQ" 79,
+      "YTAS" 750,
+      "YTDE" -203,
+      "YTFI" 738,
+      "YTLC" 514,
+      "YTUC" 712;
+}
+
+body {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    background-color: #F1EFEC;
+    color: #0B192C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #B6BBC4;
+    color: #1E3E62;
+}
+
+.logo {
+    width: 150px;
+    height: auto; 
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+#auth-section, #task-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#login-form, #register-form, #task-form, #task-list-container, .controls {
+    background-color: #F1EFEC;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #B6BBC4;
+    margin-bottom: 20px
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, textarea, select {
+    font-family: "Roboto Flex", sans-serif;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #B6BBC4;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button, select {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1E3E62;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #0B192C;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.controls button {
+    background-color: #FF6500;
+}
+
+.controls button:hover {
+    background-color: #D45500;
+}
+
+#filter-tasks {
+    background-color: white;
+    color: #0B192C;
+    border: 1px solid #B6BBC4;
+    border-radius: 8px;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+/* Task List */
+#task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-item {
+    background-color: #FFFFFF;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid #B6BBC4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-item.completed {
+    background-color: #F1EFEC;
+    text-decoration: line-through;
+    color: #B6BBC4;
+}
+
+.task-actions button {
+    margin-left: 5px;
+    padding: 5px 8px;
+    font-size: 0.9em;
+}
+
+.task-actions button.complete-btn {
+    background-color: #1E3E62;
+}
+
+.task-actions button.complete-btn:hover {
+    background-color: #0B192C;
+}
+
+.task-actions button.edit-btn {
+    background-color: #FF6500;
+}
+
+.task-actions button.edit-btn:hover {
+    background-color: #D45500;
+}
+
+.task-actions button.delete-btn {
+    background-color: #161A30;
+}
+
+.task-actions button.delete-btn:hover {
+    background-color: #000000;
+}
+
+.error-message {
+    color: #FF6500;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+footer {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #B6BBC4;
+    color: #B6BBC4;
+    font-size: 0.9em;
+}
+
+/* Modal de confirmación */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #FFFFFF;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal h3 {
+    margin-top: 0;
+    color: #1E3E62;
+    font-size: 1.4em;
+}
+
+.modal-message {
+    margin: 15px 0;
+    color: #0B192C;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.modal-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.cancel-button {
+    background-color: #F1EFEC;
+    color: #0B192C;
+}
+
+.cancel-button:hover {
+    background-color: #B6BBC4;
+}
+
+.confirm-button {
+    background-color: #1E3E62;
+    color: white;
+}
+
+.confirm-button:hover {
+    background-color: #0B192C;
+}
+
+/* Contenedor del botón de cerrar sesión */
+.logout-container {
+    background-color: #FF6500;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-container:hover {
+    background-color: #D45500;
+}
+
+/* Icono del logout */
+.logout-icon {
+    width: 32px;
+    height: 32px;
+    filter: invert(1);
+}
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logout-container:hover .tooltip {
+    opacity: 1;
+}
+
+/* Responsive: Flex Buttons */
+@media (max-width: 600px) {
+    .task-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+        gap: 10px; 
+    }
+
+    .task-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .task-item:not(:last-child) {
+        margin-bottom: 15px; 
+    }
+
+    .task-actions button {
+        flex: 1; 
+        min-width: 120px;
+    }
+}
