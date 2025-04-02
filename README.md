@@ -39,7 +39,7 @@ TaskyRM es el frontend de una aplicación de gestión de tareas (**To-Do App**) 
 
 ## 🚀 Tecnologías Usadas
 - **HTML** + **CSS** + **JavaScript**
-- **Fetch API** (Consumo de la API REST del backend)
+- **Fetch API** (Consumo de la API REST del backend [TaskyRM-Backend: https://tasky-rm-backend.vercel.app])
 - **Vercel** (Despliegue)
 
 ---
