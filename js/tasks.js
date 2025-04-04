@@ -58,6 +58,22 @@ const TaskManager = {
         
         return response.json();
     },
+
+    // Elimina todas las tareas del usuario actual
+    async deleteAllTasks() {
+        const response = await fetch(`${API_BASE_URL}/task/deleteall`, {
+            method: 'DELETE',
+            credentials: 'include'  
+        });
+        
+        if (!response.ok) {
+            const message = await response.json();
+            throw new Error(message.message || 'Error al eliminar tareas');
+        }
+        
+        return response.json();
+    },
+    
     
     // Cambia el estado de completado de una tarea
     async toggleComplete(taskId) {

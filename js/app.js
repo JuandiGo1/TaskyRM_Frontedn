@@ -126,6 +126,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+
+     // Botón de Borrar todas las tareas
+    document.getElementById('dlt-all-tasks').addEventListener('click', async () => {
+        Modal.confirm('¿Estás seguro de que deseas eliminar todas las tareas?', async () => {
+            try {
+                await TaskManager.deleteAllTasks();
+                loadTasks();
+            } catch (error) {
+                console.error('Error deleting all task:', error);
+            }
+        });
+    });
+
     // Renderizar tareas y añadir listeners a los botones
     function renderTasksWithListeners(tasksToRender) {
         const taskElements = UI.renderTasks(tasksToRender, taskList);
