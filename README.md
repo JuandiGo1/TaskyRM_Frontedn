@@ -64,6 +64,7 @@ Abre el archivo `index.html` en un navegador o usa un servidor local como Live S
 
 ---
 
+![image](https://github.com/user-attachments/assets/82b53cff-f034-44a4-882d-b1928a55e0f1)
 
 
 ¡Gracias por usar **TaskyRM Frontend**! 🎉
